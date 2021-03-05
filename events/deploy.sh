@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export MIX_ENV=prod
-export PORT=4827
+export PORT=4798
 export SECRET_KEY_BASE=insecure
 export DATABASE_URL=ecto://"events":temp@localhost/events_db
 
