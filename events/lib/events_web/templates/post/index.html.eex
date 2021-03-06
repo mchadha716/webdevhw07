@@ -6,5 +6,5 @@
 <h1>Show Post #<%= @post.id %></h1>
 
 <div>
-  <%= @post.body %>
+  <%= @post.body %> 
 </div>
