@@ -1,27 +1,10 @@
-<h1>Listing Posts</h1>
+<p>
+  <span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post) %></span>
+  <span><%= link "Back", to: Routes.post_path(@conn, :index) %></span>
+</p>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Body</th>
+<h1>Show Post #<%= @post.id %></h1>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for post <- @posts do %>
-    <tr>
-      <td><%= post.body %></td>
-
-      <td>
-        <p>Posted by <%= post.user.name %></p>
-        <span><%= link "Show", to: Routes.post_path(@conn, :show, post) %></span>
-        <span><%= link "Edit", to: Routes.post_path(@conn, :edit, post) %></span>
-        <span><%= link "Delete", to: Routes.post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<span><%= link "New Post", to: Routes.post_path(@conn, :new) %></span>
+<div>
+  <%= @post.body %>
+</div>
