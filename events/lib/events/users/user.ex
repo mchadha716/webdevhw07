@@ -1,19 +1,24 @@
-defmodule Events.Users.User do
-  use Ecto.Schema
-  import Ecto.Changeset
+defmodule EventsWeb.SessionController do
+  use EventsWeb, :controller
 
-  schema "users" do
-    field :email, :string
-    field :name, :string
-    has_many :posts, Events.Posts.Post
-
-    timestamps()
+  def create(conn, %{"email" => email}) do
+    user = Events.Users.get_user_by_email(email)
+    if user do
+      conn
+      |> put_session(:user_id, user.id)
+      |> put_flash(:info, "Welcome back #{user.name}")
+      |> redirect(to: Routes.page_path(conn, :index))
+    else
+      conn
+      |> put_flash(:error, "Login failed.")
+      |> redirect(to: Routes.page_path(conn, :index))
+    end
   end
 
-  @doc false
-  def changeset(user, attrs) do
-    user
-    |> cast(attrs, [:name, :email])
-    |> validate_required([:name, :email])
+  def delete(conn, _params) do
+    conn
+    |> delete_session(:user_id)
+    |> put_flash(:info, "Logged out.")
+    |> redirect(to: Routes.page_path(conn, :index))
   end
 end
