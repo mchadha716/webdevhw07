@@ -6,21 +6,9 @@
   <% end %>
   
   <div class="form-group">
-    Event Name: 
-    <%= text_input f, :name, class: "form-control" %>
-    <%= error_tag f, :name %> 
-  </div>
-
-  <div class="form-group">
-    <%= label f, :date %>
-    <%= text_input f, :date, class: "form-control flatpickr-datetime" %>
-    <%= error_tag f, :date %>
-  </div>
-
-  <div class="form-group">
-    Event Description: 
-    <%= textarea f, :description, class: "form-control" %>
-    <%= error_tag f, :description %>
+    <%= label f, :body %>
+    <%= textarea f, :body %>
+    <%= error_tag f, :body %>
   </div>
 
   <div>
