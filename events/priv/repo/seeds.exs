@@ -15,9 +15,8 @@ alias Events.Repo
 alias Events.Users.User
 alias Events.Posts.Post
 
-alice = Repo.insert!(%User{name: "alice", email: "alice@abc.com"})
-bob = Repo.insert!(%User{name: "bob", email: "bob@abc.com"})
+alice = Repo.insert!(%User{name: "alice"})
+bob = Repo.insert!(%User{name: "bob"})
 
 Repo.insert!(%Post{user_id: alice.id, body: "Alice says Hi!"})
 Repo.insert!(%Post{user_id: bob.id, body: "Bob says garblarg!"})
-
