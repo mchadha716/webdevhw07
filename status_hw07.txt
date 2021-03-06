@@ -1,0 +1,37 @@
+
+Web Dev Spring 2021 HW07 Status
+
+Answer the following questions:
+
+
+1. What's your name?
+
+Mira Chadha
+
+2. What's the URL of the github repo with your work for this HW?
+
+https://github.com/mchadha716/webdevhw07
+
+3. What's the URL that you deployed to?
+
+events.mirawebdev.xyz
+
+4. Is your app functionality complete? If not, what's missing?
+
+While I have the code for making posts, for some reason the option to write posts does not show up. I'm not sure why, I think something went wrong in my html code. The functionality  should exist though!!
+
+5. Is your app properly deployed? If not, what went wrong?
+
+Yes
+
+6. If you would like the deployment for an old homework to be reconsidered, what
+are the links to your Inkfish submission and deployed site?
+
+Inkfish submission: https://inkfish.ntuck-neu.site/subs/4997
+GitHub link: https://github.com/mchadha716/cs4550-hw04
+Deployed site: hw04.mirawebdev.xyz
+
+And here's a list of tasks for grading comments. Just leave this here:
+ - Development
+ - Deployment
+ - Submission
