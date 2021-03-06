@@ -8,7 +8,7 @@ use Mix.Config
 config :events, Events.Repo,
   username: "events",
   password: "aiNg8tuSee3k",
-  database: "events_db",
+  database: "events_prod",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 

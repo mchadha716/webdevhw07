@@ -2,17 +2,27 @@
   <div class="col">
     <h1>Events Feed</h1>
   </div>
+  <div class="col">
+    <%= if @conn.assigns[:current_user] do %>
+      <p>
+        <%= link("New Event", 
+          to: Routes.event_path(@conn, :new)) %>
+      </p>
+    <% end %>
+  </div>
 </div>
 
 <div clas="row">
   <%= for post <- @posts do %>
     <div class="col-sm-4 card">
-      <!--
-      <img class="card-img-top" src="" alt="">
-      -->
       <div class="card-body">
-        <p class="card-text"><%= post.body %></p>
-        <%= link "view", to: Routes.post_path(@conn, :show, post) %>
+        <p class="card-text"><%= post.name %></p>
+        <p class="card-text"><%= post.date %></p>
+        <p class="card-text"><%= post.description %></p>
+        <p class="card-text">Owner: <%= post.user.name %></p>
+        <%= if @conn.assigns[:current_user] do %>
+          <%= link("edit", to: Routes.post_path(@conn, :edit, post)) %>
+        <% end %>
       </div>
     </div>
   <% end %>

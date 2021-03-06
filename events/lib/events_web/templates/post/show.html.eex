@@ -3,8 +3,23 @@
   <span><%= link "Back", to: Routes.post_path(@conn, :index) %></span>
 </p>
 
-<h1>Show Post #<%= @post.id %></h1>
+<h1>Show Event #<%= @post.id %></h1>
+<ul>
+  <li>
+    Name: 
+    <%= @post.name %>
+  </li>
 
-<div>
-  <%= @post.body %>
-</div>
+  <li>
+    Date: 
+    <%= @post.date %>
+  </li>
+
+  <li>
+    <%= @post.description %>
+  </li>
+</ul>
+
+<span>
+  <%= link "Edit", to: Routes.post_path(@conn, :edit, @post) %>
+</span>
