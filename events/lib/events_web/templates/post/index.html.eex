@@ -1,22 +1,18 @@
-<h1>Listing Events</h1>
+<h1>Listing Posts</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Host</th>
+      <th>Body</th>
+
       <th></th>
     </tr>
   </thead>
   <tbody>
 <%= for post <- @posts do %>
     <tr>
-      <td><%= post.name %></td>
-      <td><%= post.date %></td>
-      <td><%= post.description %></td>
-      <td><%= post.user.name %></td>
+      <td><%= post.body %></td>
+
       <td>
         <p>Posted by <%= post.user.name %></p>
         <span><%= link "Show", to: Routes.post_path(@conn, :show, post) %></span>
@@ -28,4 +24,4 @@
   </tbody>
 </table>
 
-<span><%= link "New Event", to: Routes.post_path(@conn, :new) %></span>
+<span><%= link "New Post", to: Routes.post_path(@conn, :new) %></span>
